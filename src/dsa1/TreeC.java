@@ -56,6 +56,17 @@ class Binary_Methods{
 		int right=height(root.right);
 		return Math.max(left, right)+1;
 	}
+	int diameter(Node1 root) {
+		if(root==null) {
+			return 0;
+		}
+		int left=height(root.left);
+		int right=height(root.right);
+		int ans=left+right+1;
+		int left_dia=diameter(root.left);
+		int right_dia=diameter(root.right);
+		return Math.max(ans,Math.max(left_dia, right_dia));
+	}
 }
 
 public class TreeC {
@@ -66,13 +77,15 @@ public class TreeC {
 		obj.insert(30);
 		obj.insert(40);
 		obj.insert(90);
-
+		obj.insert(80);
+		obj.insert(70);
 		System.out.println("INorder");
 		obj.inorder(obj.root);
 		System.out.println("PREorder");
 		obj.preorder(obj.root);
 		System.out.println("POSTorder");
 		obj.postorder(obj.root);
-		System.out.println("Number of Root levels:"+obj.height(obj.root));;
+		System.out.println("Number of Root levels:"+obj.height(obj.root));
+		System.out.println("Longest path between two Nodes:"+obj.diameter(obj.root));
 	}
 }
