@@ -48,6 +48,14 @@ class Binary_Methods{
 			return;
 		}
 	}
+	int height(Node1 root) {
+		if(root==null) {
+			return 0;
+		}
+		int left=height(root.left);
+		int right=height(root.right);
+		return Math.max(left, right)+1;
+	}
 }
 
 public class TreeC {
@@ -57,11 +65,14 @@ public class TreeC {
 		obj.insert(20);
 		obj.insert(30);
 		obj.insert(40);
-		obj.insert(50);
+		obj.insert(90);
+
+		System.out.println("INorder");
 		obj.inorder(obj.root);
-		System.out.println("******");
+		System.out.println("PREorder");
 		obj.preorder(obj.root);
-		System.out.println("******");
+		System.out.println("POSTorder");
 		obj.postorder(obj.root);
+		System.out.println("Number of Root levels:"+obj.height(obj.root));;
 	}
 }

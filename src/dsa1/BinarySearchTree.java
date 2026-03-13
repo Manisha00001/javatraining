@@ -93,6 +93,13 @@ class Binary_Search{
 			root=root.left;	
 		return root;
 	}
+	boolean isBST(NODe root,int min,int max) {
+		if(root==null)
+			return true;
+		if(root.data<=min  || root.data>=max)
+			return false;
+		return isBST(root.left,min,root.data) && isBST(root.right,root.data,max);
+	}
 }
 public class BinarySearchTree {
 	public static void main(String[] args) {
@@ -112,5 +119,13 @@ public class BinarySearchTree {
 		obj.preorder(obj.root);
 		System.out.println("*****");
 		obj.postorder(obj.root);
+		if(obj.search(obj.root, 70)) {
+			System.out.println("element found");
+		}
+		else {
+			System.out.println("element not found");
+		}
+		System.out.println(obj.isBST(obj.root, Integer.MIN_VALUE, Integer.MAX_VALUE));
+		
 	}
 }
