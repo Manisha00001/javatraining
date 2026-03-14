@@ -23,23 +23,42 @@ class Graph_Methods {
 		  newnode.next=arr[v];
 		  arr[v]=newnode;
 		}
-	void df(int start){
+	void dfs(int start){
 	    boolean[]visited=new boolean[size];
 	    dfs_traverse(start,visited);
 	}
 	void dfs_traverse(int start,boolean[] visited){
 	    visited[start]=true;
 	    System.out.println(start+" ");
-	   Node1 temp=arr[start];
-	   while(temp!=null){
+	    Node1 temp=arr[start];
+	    while(temp!=null){
 	        if(!visited[temp.data]){
 	            dfs_traverse(temp.data,visited);
 	        }
 	        temp=temp.next;
 	    }
 	}
-
+	void bfs(int start) {
+		boolean[]visited=new boolean[size];
+		int store[]=new int[size];
+		int front=0,rear=0;
+		visited[start]=true;
+		store[rear++]=start;
+		while(front<rear) {
+			int node=store[front++];
+			System.out.println(node);
+			Node1 temp=arr[node];
+			while(temp!=null) {
+				if(!visited[temp.data]) {
+					visited[temp.data]=true;
+					store[rear++]=temp.data;
+					}
+				temp=temp.next;
+			}
+		}
 	}
+
+}
 public class Graph_LL {
 	public static void main(String[] args) {
 		Graph_Methods obj=new Graph_Methods(5);
@@ -47,6 +66,9 @@ public class Graph_LL {
 	    obj.addedge(0,2);
 	    obj.addedge(1,3);
 	    obj.addedge(1,4);
-	    obj.df(0);
+	    System.out.println("DFS");
+	    obj.dfs(0);
+	    System.out.println("BFS");
+	    obj.bfs(0);
 	}
 }
