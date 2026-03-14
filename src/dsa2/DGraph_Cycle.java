@@ -33,7 +33,7 @@ public class DGraph_Cycle {
 		int v=4;
 		int graph[][]= {{0,1,0,0},
 						{0,0,1,0},
-						{0,0,0,0},
+						{0,0,0,},
 						{0,1,0,0}};
 		System.out.println(obj.cycle(graph, v));
 	}
