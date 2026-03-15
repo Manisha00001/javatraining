@@ -1,17 +1,17 @@
 package dsa2;
 
 public class Bellman {//to find the minimum distance from source to node with negative weight also
-	public void bellman(int V,int e,int edges[][],int src) {
+	static void bellman(int V,int e,int edges[][],int src) {
 		int dis[]=new int[V];
 		for(int i=0;i<V;i++) {
 			dis[i]=Integer.MAX_VALUE;
 		}
 		dis[src]=0;
-		for(int i=1;i<V-1;i++) {
+		for(int i=1;i<=V-1;i++) {
 			for(int j=0;j<e;j++) {
 				int u=edges[j][0];
 				int v=edges[j][1];
-				int weight=edges[j][1];
+				int weight=edges[j][2];
 				if(dis[u]!=Integer.MAX_VALUE && dis[u]+weight<dis[v])
 					dis[v]=dis[u]+weight;
 			}
@@ -31,7 +31,7 @@ public class Bellman {//to find the minimum distance from source to node with ne
 						{1,3,2},
 						{1,4,2},
 						{3,2,5},
-						{3,1,-1},
+						{3,1,1},
 						{4,3,-3}
 						};
 		int src=0;

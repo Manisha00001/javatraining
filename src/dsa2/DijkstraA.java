@@ -56,7 +56,7 @@ public class DijkstraA {
 		int graph[][]= {{0,10,0,5,0},
 						{10,0,1,2,0},
 						{0,1,0,0,4},
-						{5,2,0,0,2},
+						{5,2,0,0,2},                                                                                                                                                 
 						{0,0,4,2,0}};
 		int src=0;
 		obj.dijkstra(graph, v, src);
