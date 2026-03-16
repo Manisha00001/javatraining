@@ -1,7 +1,7 @@
 package dsa2;
 
 public class Prims {
-	static int minKey(int[] key,boolean visited[],int V) {
+	static int minKey(int[] key,boolean visited[],int V) {//MSD
 		int min=Integer.MAX_VALUE;
 		int min_index=-1;
 		for(int i=0;i<V;i++) {
@@ -29,12 +29,11 @@ public class Prims {
                     parent[j] = j;
                     key[j] = graph[u][j];
                 }
-		}
-	}
-		 for(int i=0; i<V; i++){
-	            System.out.println("From src 0 to "+ i + " "+key[i]);
-	        }
-	}
+            }
+		}for(int i=0; i<V; i++){
+			System.out.println("From src 0 to "+ i + " "+key[i]);
+	     }
+}
 	public static void main(String[] args) {
 		Prims obj=new Prims();
 		int graph[][]= {{0,2,0,6,0},
