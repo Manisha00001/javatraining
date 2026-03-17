@@ -11,11 +11,16 @@ package dsa2;
  	BD
  	BCA
  	BDAB O/P:4
+ 	
+ 	equal=+s1
+ 	Not equal=max(top,left)
+ 	
  */
 public class LCS {
 		public static void main(String[] args) {
-		   String s1="ABC";
-		   String s2="AC";
+		   String s1="ABC";//A will check with s2(A and C)
+		   String s2="AC"; //B will check with s2(A and C)
+		   				   //C will check with s2(A and C)
 		   int rows=s1.length();
 		    int cols=s2.length();
 		    int store[][]=new int[rows+1][cols+1];
