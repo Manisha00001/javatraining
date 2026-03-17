@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
   frequency of top k elements --- 10 10 3 3 3 5 5 5
   priority queue remove the priority element first
  */
-public class Hepa_Hash {
+public class Heap_Hash {
 	public static void main(String[] args) {
 		int arr[]= {1,1,1,2,2,3};
 		int k=2;
