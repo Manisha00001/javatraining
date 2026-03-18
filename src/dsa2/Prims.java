@@ -1,5 +1,5 @@
 package dsa2;
-
+//Road construction (connect all path with minimum cost)
 public class Prims {
 	static int minKey(int[] key,boolean visited[],int V) {//MSD
 		int min=Integer.MAX_VALUE;
