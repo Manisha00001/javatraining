@@ -2,34 +2,35 @@ package dsa2;
 
 import java.util.HashMap;
 
-class LRU {
-	class Node{
-		int key;
-	    int value;
-	    Node prev;
-	    Node next;
-	    Node(int key,int value){
-	        this.key=key;
-	        this.value=value;
-	    }
+class Node3{
+	int key;
+    int value;
+    Node3 prev;
+    Node3 next;
+    Node3(int key,int value){
+        this.key=key;
+        this.value=value;
+   }
 }
-	    int capacity;
-	    HashMap<Integer,Node>map;
-	    Node head,tail;
-	    LRU(int capacity){
-	        this.capacity=capacity;
-	        map=new HashMap<>();
-	        head=new Node(0,0);
-	        tail=new Node(0,0);
-	        head .next=tail;
-	        tail.prev=head;
-	    }
-	    
-	
-	    
-	    public static void main(String[] args) {
-	    	System.out.println("Hello World");
-	    }
+class LRUcache {
+	int capacity;
+	HashMap<Integer,Node3>map;
+	Node3 head,tail;
+	LRUcache(int capacity){
+	   this.capacity=capacity;
+	   map=new HashMap<>();
+	   head=new Node3(0,0);
+	   tail=new Node3(0,0);
+	   head .next=tail;
+	   tail.prev=head;
 	}
+}
+class LRU{	    
+	public static void main(String[] args) {
+		LRUcache obj=new LRUcache(2);
+	    System.out.println(11&10);
+	    	
+	}
+}
 
 
